@@ -1,0 +1,925 @@
+/* -------------------- Global declarations that remain global -------------------- */
+
+@font-face {
+  font-family: 'TeamworkRegular';
+  src: url('https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/res/icons.eot?5qjga5');
+  src: url('https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/res/icons.eot?#iefix5qjga5') format('embedded-opentype'),
+       url('https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/res/icons.woff?5qjga5') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/res/icons.ttf?5qjga5') format('truetype'),
+       url('https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/res/icons.svg?5qjga5#icons') format('svg');
+  font-weight: normal !important;
+  font-style: normal;
+}
+
+/* If you want to restrict box-sizing globally to your widget only, you could scope it as below */
+#myWidgetContainer * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* -------------------- Scoped styles -------------------- */
+
+/* Instead of styling the global body, we style only our widget container */
+#myWidgetContainer,
+#myWidgetContainer tbody {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #1e2f41;
+  text-decoration: none;
+}
+
+#myWidgetContainer a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #2b9af3;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+#myWidgetContainer a:hover,
+#myWidgetContainer a.aHover {
+  color: #2575be;
+  text-decoration: underline;
+}
+
+#myWidgetContainer h1 {
+  font-size: 32px;
+  line-height: 34px;
+  color: #91B4B7;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+
+#myWidgetContainer h2 {
+  font-size: 28px;
+  color: #34495e;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+
+#myWidgetContainer h3 {
+  text-decoration: none;
+  color: #1e2f41;
+  font-size: 16px;
+  margin: 0;
+}
+
+#myWidgetContainer h4 {
+  font-size: 16px;
+  padding: 5px 0;
+  color: #617777;
+  margin: 0;
+}
+
+#myWidgetContainer #savingMessage {
+  background-color: #E3EDED;
+  display: none;
+  color: #617777;
+  font-weight: bolder;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  text-align: center;
+  margin-left: -100px;
+  padding: 5px 0;
+  z-index: 1000000;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+  -o-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+#myWidgetContainer .waiting {
+  cursor: progress;
+}
+
+/* -------------------- Teamwork Icon -------------------- */
+
+#myWidgetContainer .teamworkIcon {
+  font-family: 'TeamworkRegular' !important;
+  color: #34495e;
+  font-weight: normal;
+  font-size: 120%;
+  font-style: normal !important;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+#myWidgetContainer .teamworkIcon:hover {
+  opacity: 0.8;
+}
+
+#myWidgetContainer .teamworkIcon.withLabel {
+  padding-right: 5px;
+}
+
+#myWidgetContainer .button:hover .teamworkIcon {
+  opacity: 0.8;
+}
+
+#myWidgetContainer .teamworkIcon.alert {
+  color: #B61E2D;
+}
+
+#myWidgetContainer .del {
+  color: #ff7271;
+}
+
+#myWidgetContainer .cvcColorSquare {
+  display: inline-block;
+  text-align: left;
+  border: 0px solid #fff;
+  box-shadow: 0px 0px 5px #999;
+  -moz-box-shadow: 2px 2px 2px #999;
+  -webkit-box-shadow: 0px 0px 5px #999;
+  -o-box-shadow: 0px 0px 5px #999;
+  text-indent: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#myWidgetContainer .cvcColorSquare:hover {
+  opacity: 0.7;
+}
+
+#myWidgetContainer .unselectable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* -------------------- jQuery UI Resizable/Draggable -------------------- */
+
+#myWidgetContainer .ui-resizable {
+  position: relative;
+}
+
+#myWidgetContainer .ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  z-index: 99999;
+  display: block;
+}
+
+#myWidgetContainer .ui-resizable-disabled .ui-resizable-handle,
+#myWidgetContainer .ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+
+#myWidgetContainer .ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+
+#myWidgetContainer .ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+#myWidgetContainer .ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+
+#myWidgetContainer .ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+
+#myWidgetContainer .ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+
+#myWidgetContainer .ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+
+#myWidgetContainer .ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+
+#myWidgetContainer .ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
+
+/* -------------------- Table Styles -------------------- */
+
+#myWidgetContainer .table {
+  width: 100%;
+}
+
+#myWidgetContainer TH,
+#myWidgetContainer .tableHeader {
+  font-weight: normal;
+  color: #555;
+  border: none;
+  background-color: #f0f0f0;
+  padding: 2px;
+}
+
+#myWidgetContainer .list td {
+  border-bottom: 1px solid #dedede;
+  padding: 5px 0;
+}
+
+#myWidgetContainer .list th {
+  padding: 5px 2px;
+}
+
+#myWidgetContainer .row em {
+  font-style: normal;
+  color: #a2a2a2;
+}
+
+/* -------------------- Gantt Task Editor and Resource Editor -------------------- */
+
+#myWidgetContainer .ganttTaskEditor h2 {
+  text-transform: capitalize;
+}
+
+#myWidgetContainer .ganttTaskEditor .formElements,
+#myWidgetContainer .resourceEditor .formElements {
+  background-color: #F5F5F5;
+  border-color: #CECECE;
+}
+
+#myWidgetContainer table .resRow td,
+#myWidgetContainer table .assigEditRow td {
+  border-bottom: 1px solid #cecece;
+  padding: 5px 0;
+}
+
+/* -------------------- General / Gantt Online Styles -------------------- */
+
+#myWidgetContainer .servicesEnroll h2 {
+  margin-bottom: 20px;
+}
+
+#myWidgetContainer .heading {
+  text-align: center;
+}
+
+#myWidgetContainer .heading img {
+  display: block;
+  margin: -20px auto 30px;
+}
+
+#myWidgetContainer .twAds {
+  height: 38px;
+  background-color: #5ACADF;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
+}
+
+#myWidgetContainer .twAds.light {
+  padding-top: 8px;
+}
+
+#myWidgetContainer .twAds .twitterButton {
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+#myWidgetContainer .twAds .remove {
+  display: inline-block;
+  line-height: 38px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 12px;
+}
+
+#myWidgetContainer .twAds a {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.40);
+}
+
+#myWidgetContainer .twAds a:hover {
+  text-decoration: none;
+}
+
+#myWidgetContainer .servicesEnroll .oauth {
+  width: 90px;
+  height: auto;
+}
+
+#myWidgetContainer .servicesEnroll .oauth:hover {
+  opacity: 0.8;
+}
+
+#myWidgetContainer .errImg img {
+  width: 25px;
+  height: auto;
+  vertical-align: middle;
+}
+
+#myWidgetContainer #__FEEDBACKMESSAGEPLACE {
+  position: absolute;
+  background-color: #fafad2;
+}
+
+#myWidgetContainer .adminLogin .formElements {
+  width: 120px;
+}
+
+#myWidgetContainer .adminLogin {
+  width: 350px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+#myWidgetContainer .lastMod {
+  font-style: italic;
+  margin-right: 10px;
+  vertical-align: middle;
+  display: block;
+  color: #D37E00;
+  font-size: 12px;
+  position: fixed;
+  bottom: 25px;
+  z-index: 20;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 0, 0.16);
+}
+
+#myWidgetContainer .lastMod .teamworkIcon {
+  color: #34495e;
+  font-size: 160%;
+  vertical-align: middle;
+}
+
+#myWidgetContainer .button.textual,
+#myWidgetContainer .button.buttonImg,
+#myWidgetContainer .ganttButtonSeparator {
+  vertical-align: middle;
+}
+
+#myWidgetContainer .button span.teamworkIcon {
+  font-size: 0.95em;
+}
+
+#myWidgetContainer .clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+#myWidgetContainer .embedCode {
+  font-family: Consolas, monospace !important;
+  font-size: 100%;
+  width: 100%;
+  color: #2792E6;
+  padding: 10px;
+  border: 4px solid #d0d0d0;
+}
+
+#myWidgetContainer .ruler {
+  width: 100%;
+  display: block;
+  padding: 35px 0 35px;
+  height: 1px;
+}
+
+#myWidgetContainer .ruler.short span {
+  width: 100px;
+  height: 1px;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 1px solid #ccc;
+}
+
+#myWidgetContainer .clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack */
+* html #myWidgetContainer .clearfix {
+  height: 1%;
+}
+#myWidgetContainer .clearfix {
+  display: block;
+}
+/* close commented backslash hack */
+
+/* -------------------- Buttons -------------------- */
+
+#myWidgetContainer .buttonBar {
+}
+
+#myWidgetContainer .buttonBar.centered {
+  text-align: center;
+}
+
+#myWidgetContainer .buttonBar.block .button {
+  margin: 0 0 20px;
+}
+
+#myWidgetContainer .button {
+  display: inline-block;
+  font-size: 110%;
+  color: #fff;
+  cursor: pointer;
+  background-color: #34495e;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px 12px 8px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  text-align: center;
+  -webkit-transition: background-color 500ms ease-out 1s;
+  -moz-transition: background-color 500ms ease-out 1s;
+  -o-transition: background-color 500ms ease-out 1s;
+  transition: background-color 500ms ease-out 1s;
+}
+
+#myWidgetContainer .button.first {
+  background-color: #0E8187;
+  font-weight: bold;
+}
+
+#myWidgetContainer .button.small {
+  font-size: 100%;
+  padding: 2px 7px 4px;
+  margin-bottom: 0;
+}
+
+#myWidgetContainer .large {
+  font-size: 160%;
+  padding: 5px 14px 8px;
+  border-radius: 6px;
+}
+
+#myWidgetContainer .button.first:hover {
+  background-color: #2F2F2F;
+}
+
+#myWidgetContainer .button[disabled] {
+  cursor: default;
+  opacity: 0.4;
+}
+
+#myWidgetContainer .button:hover[disabled] {
+  background-color: #BABABA;
+}
+
+#myWidgetContainer .button.textual,
+#myWidgetContainer .button.buttonImg {
+  border: none;
+  background-color: transparent;
+  color: #68979B;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+#myWidgetContainer .button.opt {
+  background-color: #2792E6;
+}
+
+#myWidgetContainer .button.edit {
+  color: #009E94;
+  padding: 0;
+  margin: 0;
+}
+
+#myWidgetContainer .button.delete {
+  color: #B61E2D;
+  padding: 0;
+  margin: 0;
+}
+
+#myWidgetContainer .button:hover {
+  background-color: #506b84;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#myWidgetContainer a.button:hover {
+  text-decoration: none;
+}
+
+#myWidgetContainer .button.textual:hover,
+#myWidgetContainer .button.buttonImg:hover {
+  background-color: transparent;
+}
+
+#myWidgetContainer span.separator {
+  display: inline-block;
+}
+
+#myWidgetContainer .button.add {
+  color: #009E94;
+}
+
+#myWidgetContainer .button.add .teamworkIcon {
+  color: #009E94;
+}
+
+#myWidgetContainer form {
+  margin: 0;
+  padding: 0;
+}
+
+#myWidgetContainer select {
+  border: 1px solid #91B4B7;
+  padding: 4px;
+  font-size: 16px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#myWidgetContainer .formElements {
+  background-color: white;
+  padding: 4px;
+  font-size: 16px;
+  border: 1px solid #91B4B7;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#myWidgetContainer .formElementsError {
+  border: 1px solid #ff0000;
+}
+
+#myWidgetContainer .formElementExclamation {
+  width: 15px;
+  height: 25px;
+  margin-left: -20px;
+  position: absolute;
+  background: url("https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/res/alert.gif") no-repeat;
+}
+
+#myWidgetContainer span#FLD_LOGIN_NAMEerror,
+#myWidgetContainer span#FLD_PWDerror {
+  margin-left: -23px;
+  margin-top: 2px;
+}
+
+#myWidgetContainer input {
+  background-color: white;
+  padding: 4px;
+  font-size: 16px;
+  border: 1px solid #91B4B7;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#myWidgetContainer .confirmBox {
+  display: inline;
+  z-index: 10000;
+  vertical-align: middle;
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  background: #fff;
+  position: absolute;
+  margin: 0 auto;
+}
+
+#myWidgetContainer .confirmBox .confirmNo {
+  color: #e06060;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+#myWidgetContainer .confirmBox .confirmYes {
+  color: #68af6c;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+#myWidgetContainer .blackpopup {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#myWidgetContainer .smallPopUp {
+  top: 0!important;
+  margin-top: 0!important;
+}
+
+#myWidgetContainer iframe#bwinPopup {
+  border-radius: 10px;
+}
+
+#myWidgetContainer .mainWrap {
+  padding: 20px;
+}
+
+#myWidgetContainer .mainWrap > h2:first-of-type {
+  text-transform: capitalize;
+}
+
+/******** SHARE BOX *********/
+
+#myWidgetContainer .shareBar {
+  position: absolute;
+  right: 100px;
+  top: 0;
+}
+
+#myWidgetContainer .shareBar img:hover {
+  opacity: 0.8;
+}
+
+#myWidgetContainer .shareBtn {
+  background: #F9F7F7;
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  border-radius: 3px;
+  color: #878686;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 4px 8px 4px 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myWidgetContainer .shareBtn:hover {
+  border: 1px solid rgba(0, 0, 0, 0.24);
+  color: #878686;
+  opacity: 0.7;
+}
+
+#myWidgetContainer .shareBtn img {
+  border: 0 none;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+#myWidgetContainer .shareBtn a {
+  color: #888;
+  text-decoration: none;
+}
+
+#myWidgetContainer #shareBox {
+  text-align: center;
+}
+
+#myWidgetContainer #shareBox h2 {
+  margin-bottom: 30px;
+}
+
+#myWidgetContainer #shareBox .shareBtn {
+  padding: 15px 20px;
+  font-size: 30px;
+}
+
+#myWidgetContainer #shareBox .shareBtn.icon-facebook {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+#myWidgetContainer #shareBox .shareBtn.icon-twitter {
+  background-color: #00aced;
+  color: #fff;
+}
+
+#myWidgetContainer #shareBox .shareBtn.icon-linkedin {
+  background-color: #007bb6;
+  color: #fff;
+}
+
+#myWidgetContainer #shareBox .shareBtn.icon-gplus {
+  background-color: #dd4b39;
+  color: #fff;
+}
+
+#myWidgetContainer #shareBox .shareBtn span {
+  display: none;
+}
+
+/* -------------------- MODAL POPUP (ex blackPopup) -------------------- */
+
+#myWidgetContainer .modalPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 100;
+}
+
+#myWidgetContainer .modalPopup.upgradeMessage {
+  top: 40px;
+  text-align: center;
+}
+
+#myWidgetContainer .modalPopup.upgradeMessage p {
+  margin-bottom: 20px;
+  line-height: 1.6em;
+}
+
+#myWidgetContainer .modalPopup.inIframe {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#myWidgetContainer .modalPopup.black {
+  background-color: rgba(75, 75, 75, 0.6);
+}
+
+#myWidgetContainer .modalPopup .bwinPopupd {
+  position: relative;
+  box-shadow: 0 0 0 4px rgba(46, 186, 255, 0.3);
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  background-color: #fff;
+  margin: auto;
+  padding: 30px 30px;
+  border-radius: 5px;
+}
+
+#myWidgetContainer .modalPopup .popUpClose {
+  z-index: 9;
+  color: #2f2f2f;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  right: 15px;
+  top: 15px;
+}
+
+#myWidgetContainer .modalPopup.black .bwinPopupd .popUpClose {
+  color: #ffffff;
+}
+
+#myWidgetContainer .modalPopup.iframe .bwinPopupd {
+  overflow: hidden;
+  padding: 0;
+}
+
+#myWidgetContainer .modalPopup.iframe .bwinPopupd iframe {
+  position: absolute;
+  border-radius: 5px;
+}
+
+#myWidgetContainer .modalPopup.inIframe .bwinPopupd {
+  background-color: #f9f9f9;
+  border-radius: 0 0 5px 5px;
+}
+
+#myWidgetContainer .offScreen {
+  position: absolute;
+  left: -5000px;
+}
+
+/* -------------------- END #LOG_CHANGES_CONTAINER -------------------- */
+
+#myWidgetContainer #LOG_CHANGES_CONTAINER {
+  display: none;
+  width: 300px;
+  top: -130px;
+  margin-left: -35px;
+}
+
+/* -------------------- USER PROFILE -------------------- */
+
+#myWidgetContainer .userProfile {
+  font-size: 16px;
+  vertical-align: middle;
+  text-align: right;
+  margin: 0 5px 0 0;
+  padding: 5px;
+  float: right;
+  position: absolute;
+  right: 0;
+  z-index: 50;
+  line-height: 40px;
+}
+
+#myWidgetContainer .userLine {
+  max-width: 150px;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+#myWidgetContainer .avatar {
+  vertical-align: middle;
+  padding: 1px;
+  width: 27px;
+  height: 27px;
+  border: 1px solid #dedede;
+}
+
+/* -------------------- Media Queries -------------------- */
+
+/* Large screens */
+@media only screen and (max-width: 1260px) {
+  #myWidgetContainer .ganttButtonBar .button span.teamworkIcon {
+    font-size: 130%;
+  }
+  #myWidgetContainer .userLine {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1261px) and (max-width: 1320px) {
+  #myWidgetContainer .ganttButtonBar .button span.teamworkIcon {
+    font-size: 130%;
+  }
+  #myWidgetContainer .button {
+    font-size: 100%;
+    padding: 3px 9px 6px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  #myWidgetContainer .userLine {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  #myWidgetContainer .userProfile {
+    float: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  #myWidgetContainer .userProfile .teamworkIcon {
+    color: rgb(255, 255, 255);
+  }
+  #myWidgetContainer .userProfile .ganttButtonSeparator,
+  #myWidgetContainer .userProfile .avatar {
+    border-color: rgb(127, 154, 170);
+  }
+}
+
+/* Ipad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #myWidgetContainer .ganttButtonSeparator {
+    margin-left: 2px;
+    padding-right: 6px;
+    font-size: 100%;
+  }
+  #myWidgetContainer .button {
+    padding: 5px 6px 6px;
+  }
+}
+
+/* Mobile TODO */
+@media only screen and (max-width: 767px) {
+  #myWidgetContainer .button {
+    font-size: 50%;
+  }
+}
