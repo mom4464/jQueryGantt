@@ -3,52 +3,90 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Teamwork</title>
+  <title>UPS Gantt Chart</title>
 
-  <link rel=stylesheet href="platform.css" type="text/css">
-  <link rel=stylesheet href="libs/jquery/dateField/jquery.dateField.css" type="text/css">
-
-  <link rel=stylesheet href="gantt.css" type="text/css">
-  <link rel=stylesheet href="ganttPrint.css" type="text/css" media="print">
-  <link rel=stylesheet href="libs/jquery/valueSlider/mb.slider.css" type="text/css" media="print">
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-  <script src="libs/jquery/jquery.livequery.1.1.1.min.js"></script>
-  <script src="libs/jquery/jquery.timers.js"></script>
-
-  <script src="libs/utilities.js"></script>
-  <script src="libs/forms.js"></script>
-  <script src="libs/date.js"></script>
-  <script src="libs/dialogs.js"></script>
-  <script src="libs/layout.js"></script>
-  <script src="libs/i18nJs.js"></script>
-  <script src="libs/jquery/dateField/jquery.dateField.js"></script>
-  <script src="libs/jquery/JST/jquery.JST.js"></script>
-  <script src="libs/jquery/valueSlider/jquery.mb.slider.js"></script>
-
-  <script type="text/javascript" src="libs/jquery/svg/jquery.svg.min.js"></script>
-  <script type="text/javascript" src="libs/jquery/svg/jquery.svgdom.1.8.js"></script>
-
-
-  <script src="ganttUtilities.js"></script>
-  <script src="ganttTask.js"></script>
-  <script src="ganttDrawerSVG.js"></script>
-  <script src="ganttZoom.js"></script>
-  <script src="ganttGridEditor.js"></script>
-  <script src="ganttMaster.js"></script>  
-
-
-  <!--<script src="libs/profiling.js"></script>-->
-  <!--<script type="text/javascript" src="ganttTestSuite.js"></script>-->
+     <!-- Include platform.css from GitHub via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/platform.css" type="text/css">
+    
+    <!-- Include jquery.dateField.css from GitHub via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/dateField/jquery.dateField.css" type="text/css">
+    
+    <!-- Include gantt.css from GitHub via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/gantt.css" type="text/css">
+    
+    <!-- Include ganttPrint.css from GitHub via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttPrint.css" type="text/css" media="print">
+    
+    <!-- Include mb.slider.css from GitHub via jsDelivr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/valueSlider/mb.slider.css" type="text/css" media="print">
+    
+    <!-- Include jQuery from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
+    
+    <!-- Include jQuery UI from jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui@1.12.1/dist/jquery-ui.min.js"></script>
+    
+    <!-- Include jquery.livequery.1.1.1.min.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/jquery.livequery.1.1.1.min.js"></script>
+    
+    <!-- Include jquery.timers.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/jquery.timers.js"></script>
+    
+    <!-- Include utilities.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/utilities.js"></script>
+    
+    <!-- Include forms.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/forms.js"></script>
+    
+    <!-- Include date.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/date.js"></script>
+    
+    <!-- Include dialogs.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/dialogs.js"></script>
+    
+    <!-- Include layout.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/layout.js"></script>
+    
+    <!-- Include i18nJs.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/i18nJs.js"></script>
+    
+    <!-- Include jquery.dateField.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/dateField/jquery.dateField.js"></script>
+    
+    <!-- Include jquery.JST.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/JST/jquery.JST.js"></script>
+    
+    <!-- Include jquery.mb.slider.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/valueSlider/jquery.mb.slider.js"></script>
+    
+    <!-- Include jquery.svg.min.js from GitHub via jsDelivr -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/svg/jquery.svg.min.js"></script>
+    
+    <!-- Include jquery.svgdom.1.8.js from GitHub via jsDelivr -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/libs/jquery/svg/jquery.svgdom.1.8.js"></script>
+    
+    <!-- Include ganttUtilities.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttUtilities.js"></script>
+    
+    <!-- Include ganttTask.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttTask.js"></script>
+    
+    <!-- Include ganttDrawerSVG.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttDrawerSVG.js"></script>
+    
+    <!-- Include ganttZoom.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttZoom.js"></script>
+    
+    <!-- Include ganttGridEditor.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttGridEditor.js"></script>
+    
+    <!-- Include ganttMaster.js from GitHub via jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/gh/robicch/jQueryGantt@master/ganttMaster.js"></script>
+</head>
 </head>
 <body style="background-color: #fff;">
 
 
-<div id="ndo" style="position:absolute;right:5px;top:5px;width:378px;padding:5px;background-color: #FFF5E6; border:1px solid #F9A22F; font-size:12px" class="noprint">
-  This Gantt editor is free thanks to <a href="http://twproject.com" target="_blank">Twproject</a> where it can be used on a complete and flexible project management solution.<br> Get your projects done! Give <a href="http://twproject.com" target="_blank">Twproject a try now</a>.
-</div>
 <div id="workSpace" style="padding:0px; overflow-y:auto; overflow-x:hidden;border:1px solid #e5e5e5;position:relative;margin:0 5px"></div>
 
 <style>
@@ -112,26 +150,27 @@ $(function() {
 function getDemoProject(){
   //console.debug("getDemoProject")
 ret= {"tasks":    [
-      {"id": -1, "name": "Gantt editor", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 0, "status": "STATUS_ACTIVE", "depends": "", "canWrite": true, "start": 1396994400000, "duration": 20, "end": 1399586399999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": true},
+      {"id": -1, "name": "UPS Dev", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 0, "status": "STATUS_ACTIVE", "depends": "", "canWrite": true, "start": 1396994400000, "duration": 20, "end": 1399586399999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": true},
       {"id": -2, "name": "coding", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 1, "status": "STATUS_ACTIVE", "depends": "", "canWrite": true, "start": 1396994400000, "duration": 10, "end": 1398203999999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": true},
-      {"id": -3, "name": "gantt part", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 2, "status": "STATUS_ACTIVE", "depends": "", "canWrite": true, "start": 1396994400000, "duration": 2, "end": 1397167199999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": false},
-      {"id": -4, "name": "editor part", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 2, "status": "STATUS_SUSPENDED", "depends": "3", "canWrite": true, "start": 1397167200000, "duration": 4, "end": 1397685599999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": false},
-      {"id": -5, "name": "testing", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 1, "status": "STATUS_SUSPENDED", "depends": "2:5", "canWrite": true, "start": 1398981600000, "duration": 5, "end": 1399586399999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": true},
-      {"id": -6, "name": "test on safari", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 2, "status": "STATUS_SUSPENDED", "depends": "", "canWrite": true, "start": 1398981600000, "duration": 2, "end": 1399327199999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": false},
-      {"id": -7, "name": "test on ie", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 2, "status": "STATUS_SUSPENDED", "depends": "6", "canWrite": true, "start": 1399327200000, "duration": 3, "end": 1399586399999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": false},
-      {"id": -8, "name": "test on chrome", "progress": 0, "progressByWorklog": false, "relevance": 0, "type": "", "typeId": "", "description": "", "code": "", "level": 2, "status": "STATUS_SUSPENDED", "depends": "6", "canWrite": true, "start": 1399327200000, "duration": 2, "end": 1399499999999, "startIsMilestone": false, "endIsMilestone": false, "collapsed": false, "assigs": [], "hasChild": false}
+     
     ], "selectedRow": 2, "deletedTaskIds": [],
       "resources": [
-      {"id": "tmp_1", "name": "Resource 1"},
-      {"id": "tmp_2", "name": "Resource 2"},
-      {"id": "tmp_3", "name": "Resource 3"},
-      {"id": "tmp_4", "name": "Resource 4"}
+      {"id": "tmp_1", "name": "TCL-HW"},
+      {"id": "tmp_2", "name": "Prototype"},
+      {"id": "tmp_3", "name": "TCL-IT"},
+      {"id": "tmp_4", "name": "Sys/SW"},
+      {"id": "tmp_5", "name": "Blonie-IT"},
+      {"id": "tmp_6", "name": "Blonie-Test"},
+      {"id": "tmp_7", "name": "Kokomo-TC"},
+      {"id": "tmp_8", "name": "Cybersecurity"}
     ],
       "roles":       [
-      {"id": "tmp_1", "name": "Project Manager"},
-      {"id": "tmp_2", "name": "Worker"},
-      {"id": "tmp_3", "name": "Stakeholder"},
-      {"id": "tmp_4", "name": "Customer"}
+      {"id": "tmp_1", "name": "Responsible"},
+      {"id": "tmp_2", "name": "Accountable"},
+      {"id": "tmp_3", "name": "Support"},
+      {"id": "tmp_4", "name": "Informed"},
+      {"id": "tmp_5", "name": "Consulted"}
+
     ], "canWrite":    true, "canDelete":true, "canWriteOnParent": true, canAdd:true}
 
 
@@ -502,7 +541,7 @@ function showBaselineInfo (event,element){
   <!--
   <div class="ganttButtonBar noprint">
     <div class="buttons">
-      <a href="https://gantt.twproject.com/"><img src="res/twGanttLogo.png" alt="Twproject" align="absmiddle" style="max-width: 136px; padding-right: 15px"></a>
+      <a href="https://www.borgwarner.com/home"><img src="Twproject.png" alt="Twproject" align="absmiddle" style="max-width: 136px; padding-right: 15px"></a>
 
       <button onclick="$('#workSpace').trigger('undo.gantt');return false;" class="button textual icon requireCanWrite" title="undo"><span class="teamworkIcon">&#39;</span></button>
       <button onclick="$('#workSpace').trigger('redo.gantt');return false;" class="button textual icon requireCanWrite" title="redo"><span class="teamworkIcon">&middot;</span></button>
@@ -843,9 +882,6 @@ $(document).on("change", "#load-file", function() {
 });
 
 </script>
-
-
-
 
 
 
