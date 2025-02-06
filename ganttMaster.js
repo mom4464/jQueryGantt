@@ -102,7 +102,9 @@ GanttMaster.prototype.init = function (workSpace) {
 
   var self = this;
   //load templates
-  $("#gantEditorTemplates").loadTemplates().remove();
+  //$("#gantEditorTemplates").loadTemplates().remove();
+  $("#myWidgetContainer #gantEditorTemplates").loadTemplates();
+
 
   //create editor
   this.editor = new GridEditor(this);

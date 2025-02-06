@@ -19,13 +19,13 @@
     <!-- script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script -->
     
     <!-- Include jQuery UI from jsDelivr CDN -->
-    <script  src="https://cdn.jsdelivr.net/npm/jquery-ui@1.12.1/dist/jquery-ui.min.js"></script>
+    <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/jquery-ui@1.12.1/dist/jquery-ui.min.js"></script>
     
     <!-- Include jquery.livequery.1.1.1.min.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/jquery.livequery.1.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/jquery.livequery.1.1.1.min.js"></script>
     
     <!-- Include jquery.timers.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/jquery.timers.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/jquery.timers.js"></script>
     
 
 
@@ -33,55 +33,55 @@
 
 
     <!-- Include utilities.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/utilities.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/utilities.js"></script>
     
     <!-- Include forms.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/forms.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/forms.js"></script>
     
     <!-- Include date.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/date.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/date.js"></script>
     
     <!-- Include dialogs.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/dialogs.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/dialogs.js"></script>
     
     <!-- Include layout.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/layout.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/layout.js"></script>
     
     <!-- Include i18nJs.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/i18nJs.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/i18nJs.js"></script>
     
     <!-- Include jquery.dateField.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/dateField/jquery.dateField.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/dateField/jquery.dateField.js"></script>
     
     <!-- Include jquery.JST.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/JST/jquery.JST.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/JST/jquery.JST.js"></script>
     
     <!-- Include jquery.mb.slider.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/valueSlider/jquery.mb.slider.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/valueSlider/jquery.mb.slider.js"></script>
     
     <!-- Include jquery.svg.min.js from GitHub via jsDelivr -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/svg/jquery.svg.min.js"></script>
+    <script type="text/javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/svg/jquery.svg.min.js"></script>
     
     <!-- Include jquery.svgdom.1.8.js from GitHub via jsDelivr -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/svg/jquery.svgdom.1.8.js"></script>
+    <script type="text/javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/libs/jquery/svg/jquery.svgdom.1.8.js"></script>
     
     <!-- Include ganttUtilities.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttUtilities.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttUtilities.js"></script>
     
     <!-- Include ganttTask.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttTask.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttTask.js"></script>
     
     <!-- Include ganttDrawerSVG.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttDrawerSVG.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttDrawerSVG.js"></script>
     
     <!-- Include ganttZoom.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttZoom.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttZoom.js"></script>
     
     <!-- Include ganttGridEditor.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttGridEditor.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttGridEditor.js"></script>
     
  <!-- Include ganttMaster.js from GitHub via jsDelivr -->
-    <script src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttMaster.js" defer ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mom4464/jQueryGantt@latest/ganttMaster.js" defer ></script>
 
 <div id="workSpace" style="padding:0px; overflow-y:auto; overflow-x:hidden;border:1px solid #e5e5e5;position:relative;margin:0 5px"></div>
 
@@ -116,7 +116,7 @@
 
 <form id="gimmeBack" style="display:none;" action="../gimmeBack.jsp" method="post" target="_blank"><input type="hidden" name="prj" id="gimBaPrj"></form>
 
-<script>
+<script type="text/javascript">
 
 var ge;
 ${esc.d}(function() {
@@ -794,7 +794,7 @@ function showBaselineInfo (event,element){
 
 
 </div>
-<script type="text/javascript">
+<script type="text/javascript" type="text/javascript">
   ${esc.d}.JST.loadDecorator("RESOURCE_ROW", function(resTr, res){
     resTr.find(".delRes").click(function(){${esc.d}(this).closest("tr").remove()});
   });
